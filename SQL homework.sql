@@ -1,5 +1,5 @@
-﻿SELECT Customers.Companyname
-, Orders.OrderDate
+﻿CREATE VIEW ClassOrders AS
+SELECT Customers.Companyname
 , Orders.OrderID
 , Products.ProductName
 , Order_Details.Quantity
@@ -14,5 +14,5 @@ INNER JOIN Products
 ON Products.ProductID = Order_Details.ProductID
 INNER JOIN Categories
 ON Categories.CategoryID = Products.CategoryID
-WHERE EXTRACT(YEAR FROM Orders.OrderDate) = 1996
+--WHERE EXTRACT(YEAR FROM Orders.OrderDate) = 1996
 ORDER BY ExtendedPrice DESC
